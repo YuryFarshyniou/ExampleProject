@@ -6,4 +6,9 @@ public  abstract class Vehicle {
 
     public abstract String getVehicleInformation();
 
+    public void customMethod(){
+        this.engine = "SuperEngine";
+        System.out.println(this.engine);
+    }
+
 }

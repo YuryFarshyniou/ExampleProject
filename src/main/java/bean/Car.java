@@ -2,18 +2,31 @@ package bean;
 
 public class Car extends Vehicle {
 
-    private Integer seats;
+    private int seats;
 
-    public Integer getSeats() {
+    public int getSeats() {
         return seats;
     }
 
-    public void setSeats(Integer seats) {
+    public void setSeats(int seats) {
         this.seats = seats;
+    }
+
+    public Car() {
+
+    }
+
+    public Car(Integer seats, Vehicle vehicle) {
+        this.seats = seats;
+        vehicle.customMethod();
     }
 
     @Override
     public String getVehicleInformation() {
-        return  String.valueOf(this.seats)+" In our Car!";
+        return this.seats + " In our Car!";
+    }
+
+    public void someMethod(String carName, int engPower) {
+        System.out.println(carName + " " + engPower + " HorsePowers");
     }
 }

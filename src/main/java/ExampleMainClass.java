@@ -1,20 +1,33 @@
 import bean.Car;
 import bean.Vehicle;
 
-import java.lang.reflect.Field;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class ExampleMainClass {
-    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException {
-        Car car = new Car();
-        car.setSeats(7);
-        Class<? extends Vehicle> carClass = car.getClass();
-        System.out.println();
-        Field seats = carClass.getDeclaredField("seats");
-        seats.setAccessible(true);
-        seats.set(car, 4);
+    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException,  InstantiationException, ClassNotFoundException {
+        Car someCar = Car.class.getDeclaredConstructor().newInstance();
+        Class<? extends Car> carCl = someCar.getClass();
+         carCl.getDeclaredMethod("someMethod",String.class, int.class).invoke(someCar,"Ford",70);
 
-        System.out.println(carClass.getDeclaredMethod("getVehicleInformation").invoke(car));
+
+        Car car = null;
+        Class<?> carClass = Class.forName(Car.class.getName());
+        Class[]params = {Integer.class,Vehicle.class};
+        Car vehicle = Car.class.getDeclaredConstructor().newInstance();
+        car = (Car) carClass.getDeclaredConstructor(params).newInstance(4,vehicle );
+        car.setSeats(5);
+        System.out.println(car.getSeats());
+
+        Constructor<?>[] constructors = carClass.getConstructors();
+        for(Constructor constructor:constructors){
+            System.out.println(constructor);
+            Class[] parameterTypes = constructor.getParameterTypes();
+            for(Class param:parameterTypes){
+                System.out.println(param);
+            }
+        }
 
     }
 }
