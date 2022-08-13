@@ -27,6 +27,7 @@ public class ExampleMainClass {
                 System.out.println(param);
             }
         }
-
+        System.out.println(Car.class.getClassLoader());
+        System.out.println(String.class.getClassLoader());
     }
 }
