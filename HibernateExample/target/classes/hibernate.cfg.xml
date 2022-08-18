@@ -16,13 +16,12 @@
         <!-- Database connection settings -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/phone_store</property>
-        <property name="connection.username">Yurachel</property>
-        <property name="connection.password">17092015GhjcnjRbrbhtr1823</property>
-<!--        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>-->
+        <property name="connection.url">jdbc:postgresql://localhost:5432/exampleDB</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">06122008YuraFarshyniou</property>
 
         <!--Options:-->
-<!--        <property name="hbm2ddl.auto">validate</property>-->
+        <property name="hbm2ddl.auto">create</property>
 
         <!-- These three properties for second level cache and query cache-->
 <!--        <property name="cache.use_second_level_cache">true</property>-->
@@ -33,10 +32,10 @@
 
         <!-- Echo all executed SQL to stdout -->
 
-<!--        <property name="format_sql">true</property>-->
-<!--        <property name="hibernate.highlight_sql">true</property>-->
-<!--        <property name="use_sql_comments">true</property>-->
-<!--        <property name="show_sql">true</property>-->
+        <property name="format_sql">true</property>
+        <property name="hibernate.highlight_sql">true</property>
+        <property name="use_sql_comments">true</property>
+        <property name="show_sql">true</property>
 
         <!-- JDBC connection pool (use the built-in) -->
 <!--        <property name="connection.pool_size">10</property>-->
@@ -45,7 +44,7 @@
 
 <!--        <property name="hibernate.current_session_context_class">thread</property>-->
 
-<!--        <mapping class="ways_to_work_with_bd.by.yurachel.model.Phone"/>-->
+        <mapping class="bean.SpaceMarine"/>
     </session-factory>
 
 </hibernate-configuration>
