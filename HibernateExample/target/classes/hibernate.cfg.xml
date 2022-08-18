@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/phone_store</property>
+        <property name="connection.username">Yurachel</property>
+        <property name="connection.password">17092015GhjcnjRbrbhtr1823</property>
+<!--        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>-->
+
+        <!--Options:-->
+<!--        <property name="hbm2ddl.auto">validate</property>-->
+
+        <!-- These three properties for second level cache and query cache-->
+<!--        <property name="cache.use_second_level_cache">true</property>-->
+<!--        <property name="cache.region.factory_class">-->
+<!--            org.hibernate.cache.ehcache.internal.SingletonEhcacheRegionFactory-->
+<!--        </property>-->
+<!--        <property name="cache.use_query_cache">true</property>-->
+
+        <!-- Echo all executed SQL to stdout -->
+
+<!--        <property name="format_sql">true</property>-->
+<!--        <property name="hibernate.highlight_sql">true</property>-->
+<!--        <property name="use_sql_comments">true</property>-->
+<!--        <property name="show_sql">true</property>-->
+
+        <!-- JDBC connection pool (use the built-in) -->
+<!--        <property name="connection.pool_size">10</property>-->
+        <!--        <mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml"/>-->
+
+
+<!--        <property name="hibernate.current_session_context_class">thread</property>-->
+
+<!--        <mapping class="ways_to_work_with_bd.by.yurachel.model.Phone"/>-->
+    </session-factory>
+
+</hibernate-configuration>

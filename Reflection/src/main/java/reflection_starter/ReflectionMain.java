@@ -1,10 +1,13 @@
+package reflection_starter;
+
 import bean.Car;
 import bean.Vehicle;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
-public class ExampleMainClass {
+public class ReflectionMain {
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException, ClassNotFoundException {
         Car someCar = Car.class.getDeclaredConstructor().newInstance();
         Class<? extends Car> carCl = someCar.getClass();
@@ -17,7 +20,10 @@ public class ExampleMainClass {
         Car vehicle = Car.class.getDeclaredConstructor().newInstance();
         car = (Car) carClass.getDeclaredConstructor(params).newInstance(4, vehicle);
         car.setSeats(5);
-        System.out.println(car.getSeats());
+        List<Class> classPArams = List.of(params);
+        System.out.println("***");
+        classPArams.forEach(System.out::println);
+        System.out.println("***");
 
         Constructor<?>[] constructors = carClass.getConstructors();
         for (Constructor constructor : constructors) {
@@ -31,3 +37,4 @@ public class ExampleMainClass {
         System.out.println(String.class.getClassLoader());
     }
 }
+

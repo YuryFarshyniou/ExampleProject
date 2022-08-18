@@ -1,5 +1,6 @@
 package bean;
 
+
 public class Car extends Vehicle {
 
     private int seats;

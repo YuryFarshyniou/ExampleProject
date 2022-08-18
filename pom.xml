@@ -6,11 +6,33 @@
 
     <groupId>by.yfarshyniou</groupId>
     <artifactId>ExampleProject</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>HibernateExample</module>
+        <module>Reflection</module>
+    </modules>
+    <dependencies>
+
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
+
+
+    </dependencies>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <hibernate.version>6.1.2.Final</hibernate.version>
+        <postgresql.version>42.4.1</postgresql.version>
     </properties>
 
 </project>

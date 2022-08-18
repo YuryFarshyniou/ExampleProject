@@ -1,0 +1,4 @@
+intellij idea version 2020.3.3
+Java version jdk-11.0.2
+git version 2.33.0.windows.2
+postgresql-12.9-1-windows-x64
