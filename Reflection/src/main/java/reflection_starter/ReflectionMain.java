@@ -35,6 +35,19 @@ public class ReflectionMain {
         }
         System.out.println(Car.class.getClassLoader());
         System.out.println(String.class.getClassLoader());
+        System.out.println("---------------------");
+        String blocksExample = """
+                some text
+                with spaces in this block 
+                
+                
+                
+                
+                Some void raws
+                """;
+        System.out.println(blocksExample);
     }
+
+
 }
 
