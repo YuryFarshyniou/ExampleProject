@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
+import ClassCounter from "./Components/ClassCounter";
 
 function App() {
-  return (
-    <div className="App">
+    const [value, setValue] = useState('Some text');
 
-    </div>
-  );
+
+
+    function changeValue(event) {
+        setValue(event.target.value);
+    }
+
+    return (
+        <div className="App">
+       <ClassCounter/>
+
+        </div>
+    );
 }
 
 export default App;
