@@ -1,19 +1,20 @@
-import React, {useState} from 'react';
-import ClassCounter from "./Components/ClassCounter";
-
+import React from 'react';
+import './styles/App.css'
 function App() {
-    const [value, setValue] = useState('Some text');
-
-
-
-    function changeValue(event) {
-        setValue(event.target.value);
-    }
 
     return (
         <div className="App">
-       <ClassCounter/>
-
+            <div className={"post"}>
+                <div className={"post_content"}>
+                    <strong>1. JavaScript</strong>
+                    <div>
+                        Javascript - it's a programmer language.
+                    </div>
+                </div>
+                <div className={"post__btns"}>
+                    <button>Delete</button>
+                </div>
+            </div>
         </div>
     );
 }
