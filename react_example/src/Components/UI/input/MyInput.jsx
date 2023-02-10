@@ -5,6 +5,7 @@ const MyInput = (props) => {
         <input {...props} className={classes.myInput} />
 
     );
+
 };
 
 export default MyInput;

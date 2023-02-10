@@ -10,26 +10,27 @@ function App() {
         {id: 76, title: "Java", body: "Cool language"},
         {id: 999, title: "Python", body: "Fucking snake"}
     ])
-    const [title, setTitle] = useState("");
-    const bodyInputRef = useRef();
+    const [post, setPost] = useState({title: '', body: ''})
 
     const addNewPost = (e) => {
         e.preventDefault();
-        console.log(bodyInputRef.current.value)
+        setPosts([...posts,...post]);
+        setPost({title: '', body: ''})
     }
+
     return (
         <div className="App">
             <form>
-                <MyInput value={title}
-                         onChange={e => setTitle(e.target.value)}
+                <MyInput value={post.title}
+                         onChange={e => setPost({...post, title: e.target.value})}
                          type="text"
                          placeholder="Post name"/>
-                <input ref={bodyInputRef} type="text"/>
-                {/*<MyInput*/}
-                {/*    ref={bodyInputRef}*/}
-                {/*    type="text"*/}
-                {/*    placeholder="Post description"/>*/}
-                <MyButton onClick={addNewPost}>Sometitle</MyButton>
+                <MyInput
+                    value={post.body}
+                    onChange={e => setPost({...post, body: e.target.value})}
+                    type="text"
+                    placeholder="Post description"/>
+                <MyButton onClick={addNewPost}>Create post</MyButton>
             </form>
             <PostList posts={posts} title="Posts about JS"/>
 
