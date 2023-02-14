@@ -3,6 +3,7 @@ import './styles/App.css'
 import PostList from "./Components/PostList";
 import MyButton from "./Components/UI/button/MyButton";
 import MyInput from "./Components/UI/input/MyInput";
+import PostForm from "./Components/PostForm";
 
 function App() {
     const [posts, setPosts] = useState([
@@ -10,29 +11,18 @@ function App() {
         {id: 76, title: "Java", body: "Cool language"},
         {id: 999, title: "Python", body: "Fucking snake"}
     ])
-    const [post, setPost] = useState({title: '', body: ''})
 
-    const addNewPost = (e) => {
-        e.preventDefault();
-        setPosts([...posts,...post]);
-        setPost({title: '', body: ''})
+    const createPost = (newPost) => {
+        setPosts([...posts, newPost])
+    }
+    const removePost = (post) => {
+        setPosts(posts.filter(p => p.id !== post.id))
     }
 
     return (
         <div className="App">
-            <form>
-                <MyInput value={post.title}
-                         onChange={e => setPost({...post, title: e.target.value})}
-                         type="text"
-                         placeholder="Post name"/>
-                <MyInput
-                    value={post.body}
-                    onChange={e => setPost({...post, body: e.target.value})}
-                    type="text"
-                    placeholder="Post description"/>
-                <MyButton onClick={addNewPost}>Create post</MyButton>
-            </form>
-            <PostList posts={posts} title="Posts about JS"/>
+            <PostForm create={createPost}/>
+            <PostList remove={removePost} posts={posts} title="Posts about JS"/>
 
         </div>
     );
