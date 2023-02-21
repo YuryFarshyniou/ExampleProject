@@ -4,7 +4,7 @@ import PostList from "./Components/PostList";
 import PostForm from "./Components/PostForm";
 import {MySelect} from "./Components/UI/select/MySelect";
 
-function App() {
+export function App() {
     const [posts, setPosts] = useState([
         {id: 55, title: "JavaScript", body: "JAvascript has a dick"},
         {id: 76, title: "Java", body: "Cool language"},
@@ -44,5 +44,3 @@ function App() {
         </div>
     );
 }
-
-export default App;
