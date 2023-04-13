@@ -7,7 +7,7 @@ import {AuthContext} from "./context/context";
 
 export function App() {
     const [isAuth, setIsAuth] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         if (localStorage.key('auth')) {
             setIsAuth(true);

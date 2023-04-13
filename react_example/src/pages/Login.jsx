@@ -3,7 +3,7 @@ import MyInput from "../Components/UI/input/MyInput";
 import MyButton from "../Components/UI/button/MyButton";
 import {AuthContext} from "../context/context";
 
-const Login = () => {
+const  Login = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext);
     const login = event => {
         event.preventDefault();
