@@ -13,11 +13,15 @@ public class Course {
 
     private String name;
 
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course",cascade = CascadeType.ALL)
     private List<Student> students;
+
+    @OneToMany(mappedBy = "course")
+    private List<TrainerCourse> trainerCourses;
 
     public Course() {
         this.students = new ArrayList<>();
+        this.trainerCourses = new ArrayList<>();
     }
 
     public long getId() {
@@ -42,6 +46,14 @@ public class Course {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<TrainerCourse> getTrainerCourses() {
+        return trainerCourses;
+    }
+
+    public void setTrainerCourses(List<TrainerCourse> trainerCourses) {
+        this.trainerCourses = trainerCourses;
     }
 
     @Override

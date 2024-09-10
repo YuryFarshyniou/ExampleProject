@@ -1,6 +1,9 @@
 package hibernate_starter;
 
+import bean.Course;
 import bean.SpaceMarine;
+import bean.Trainer;
+import bean.TrainerCourse;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -9,6 +12,8 @@ import service.CourseServiceImpl;
 import session_factory.SessionFactoryContainer;
 
 import java.io.Serializable;
+import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,19 +28,26 @@ public class HibernateMain implements Serializable {
 
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        Session sessionForDeleteOperation = sessionFactory.openSession();
-        sessionForDeleteOperation.beginTransaction();
-        courseService.fillBd(session);
-        courseService.getStudentsByCourse(session);
-        courseService.deleteStudents(session);
-        courseService.addStudent(session);
-        courseService.deleteCourse(session);
+
+//        courseService.fillBd(session);
+//        courseService.getStudentsByCourse(session);
+//        courseService.deleteStudents(session);
+//        courseService.addStudent(session);
+//        courseService.deleteCourse(session,sessionForDeleteOperation);
+
+//        Course course = session.get(Course.class,3L);
+//        Trainer trainer = session.get(Trainer.class,3L);
+//
+//        TrainerCourse trainerCourse = new TrainerCourse();
+//        trainerCourse.setCreatedAt(Instant.now());
+//        trainerCourse.setCreatedBy("Yurachel");
+//        trainerCourse.setCourse(course);
+//        trainerCourse.setTrainer(trainer);
+//
+//
+//session.persist(trainerCourse);
 
         session.getTransaction().commit();
-        session.close();
-
-        sessionForDeleteOperation.getTransaction().commit();
-        sessionForDeleteOperation.close();
         sessionFactory.close();
     }
 
